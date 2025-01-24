@@ -211,6 +211,28 @@ footer a:hover {
     <section id="products">
     <h2>Nossos Jogos</h2>
     <div class="product-grid">
+
+        <div class="product-card">
+            <img src="https://assetsio.gnwcdn.com/co65za.jpg?width=1200&height=1200&fit=bounds&quality=70&format=jpg&auto=webp" alt="Super mario world">
+            <h3>Super Mario World</h3>
+            <p>R$ 99,00</p>
+            <button onclick="confirmPurchase('Super Mario World', 9900)">Comprar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://geekgamer-capas.nyc3.cdn.digitaloceanspaces.com/66ij7tmj.png" alt="Megaman X">
+            <h3>Megaman X</h3>
+            <p>R$ 69,00</p>
+            <button onclick="confirmPurchase('Megaman X', 6900)">Comprar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://upload.wikimedia.org/wikipedia/pt/4/45/Resident_Evil_2_capa.png" alt="Resident Evil 2">
+            <h3>Resident Evil 2</h3>
+            <p>R$ 79,00</p>
+            <button onclick="confirmPurchase('Megaman X', 7900)">Comprar</button>
+        </div>
+
         <div class="product-card">
             <img src="https://image.api.playstation.com/vulcan/ap/rnd/202407/1814/91f55ab9e79e1853fa1094bcd9cbe88ea6ddba474675c75d.jpg" alt="EA SPORTS FC 25">
             <h3>EA SPORTS FC 25</h3>
@@ -262,34 +284,35 @@ footer a:hover {
             <p>R$ 89,90</p>
             <button onclick="confirmPurchase('Zelda', 8990)">Comprar</button>
         </div>
+
     </div>
 </section>
 
-    <footer>
-        <p>&copy; 2025 Game World. Todos os direitos reservados. <a href="javascript:void(0);" onclick="openWhatsApp()">Contato</a></p>
-    </footer>
+<footer>
+    <p>&copy; 2025 Game World. Todos os direitos reservados. <a href="javascript:void(0);" onclick="openWhatsApp()">Contato</a></p>
+</footer>
 
-    <script>
-        function scrollToSection(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-        }
+<script>
+    function scrollToSection(id) {
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
 
-        function confirmPurchase(product, price) {
-            let confirm = window.confirm(`Você deseja confirmar a compra de ${product} por R$ ${price / 100}?`);
-            if (confirm) {
-                const message = `Olá, gostaria de comprar o produto: ${product} por R$ ${price / 100}.`;
-                const whatsappLink = `https://wa.me/+558699733052?text=${encodeURIComponent(message)}`;
-
-                window.location.href = whatsappLink;
-            }
-        }
-
-        function openWhatsApp() {
-            const message = "Olá, gostaria de mais informações sobre os produtos da Game World!";
-            const whatsappLink = `https://wa.me/+558699733052?text=${encodeURIComponent(message)}`;
+    function confirmPurchase(product, price) {
+        let confirm = window.confirm(`Você deseja confirmar a compra de ${product} por R$ ${price / 100}?`);
+        if (confirm) {
+            const message = `Olá, gostaria de comprar o produto: ${product} por R$ ${price / 100}.`;
+            const whatsappLink = `https://wa.me/+558699882569?text=${encodeURIComponent(message)}`;
 
             window.location.href = whatsappLink;
         }
-    </script>
+    }
+
+    function openWhatsApp() {
+        const message = "Olá, gostaria de mais informações sobre os produtos da Game World!";
+        const whatsappLink = `https://wa.me/+558699882569?text=${encodeURIComponent(message)}`;
+
+        window.location.href = whatsappLink;
+    }
+</script>
 </body>
 </html>
