@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game World - Loja de Games</title>
+    <style>
+        /* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1c1c1c;
+    color: #fff;
+}
+
+header {
+    background-color: #252525;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: flex-start; /* Alinha a logo à esquerda */
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+header .logo {
+    font-size: 3rem;  /* Aumente o tamanho da fonte para destacar */
+    color: #f90;
+    font-weight: bold;
+    margin-right: 2rem; /* Espaço entre a logo e o menu */
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+nav a:hover {
+    color: #f90;
+}
+
+.banner {
+    background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLp6MJ7zSkdiEPyL1v09KBcy2yB_veDtTPNvjcM9GNAxQdmnq_f4AddeReAXVKBd3JaJX46aEw_KzLD4ia5ne_I40PrAgXTJRhcrgOyawTkwZmNWkmdkD2BCDOUOUzGqioEI9X8WGRf2E/s1600/116633_Papel-de-Parede-Mario-Bros_1600x1200.jpg') no-repeat center/cover;
+    text-align: center;
+    padding: 8rem 1rem;
+    color: #fff9f9;
+    position: relative;
+}
+
+.banner h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.banner p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.banner button {
+    background-color: #f90;
+    color: #000;
+    border: none;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.banner button:hover {
+    background-color: #ffa500;
+}
+
+section {
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #f90;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.product-card {
+    background-color: #333;
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    height: 250px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.product-card p {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #f90;
+}
+
+.product-card button {
+    background-color: #f90;
+    color: #000;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.product-card button:hover {
+    background-color: #ffa500;
+}
+
+footer {
+    padding: 2rem;
+    background-color: #252525;
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+}
+
+footer a {
+    color: #f90;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ffa500;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Game World</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#products">Produtos</a></li>
+                <li><a href="javascript:void(0);" onclick="openWhatsApp()">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="banner">
+        <h1>Bem-vindo à Game World</h1>
+        <p>A melhor experiência em jogos e produtos colecionáveis de Piripiri!</p>
+        <button onclick="scrollToSection('products')">Ver Produtos</button>
+    </section>
+
+    <section id="about">
+        <h2>Sobre Nós</h2>
+        <p>A Game World é uma empresa criada para satisfazer a demanda de jogos eletrônicos e ao mesmo tempo a necessidade de produtos personalizados em Piripiri. O setor de e-Sports é pouco saturado, o que representa uma enorme oportunidade para nós. Somos uma empresa inovadora que se diferencia pelo atendimento e infraestrutura. Acreditamos em uma experiência única e, por isso, iremos investir pesado em tecnologia e conforto para o cliente, além de objetivar um sentimento nostálgico.</p>
+    
+        <h3>Nossa Missão</h3>
+        <p>Proporcionar uma experiência única e imersiva no mundo dos jogos eletrônicos e produtos personalizados, combinando tecnologia de ponta, conforto e atendimento excepcional para criar um espaço onde os fãs de e-Sports e colecionáveis possam se conectar e viver momentos inesquecíveis.</p>
+    
+        <h3>Nossa Visão</h3>
+        <p>Ser a principal referência em Piripiri e região no setor de e-Sports e produtos colecionáveis até o ano de 2025, reconhecida pela inovação e pela criatividade de um ambiente que une nostalgia e modernidade.</p>
+    </section>
+    
+    <section id="products">
+    <h2>Nossos Jogos</h2>
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="https://image.api.playstation.com/vulcan/ap/rnd/202407/1814/91f55ab9e79e1853fa1094bcd9cbe88ea6ddba474675c75d.jpg" alt="EA SPORTS FC 25">
+            <h3>EA SPORTS FC 25</h3>
+            <p>R$ 199,90</p>
+            <button onclick="confirmPurchase('EA SPORTS FC 25', 19990)">Comprar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://image.api.playstation.com/cdn/UP1004/CUSA03041_00/Hpl5MtwQgOVF9vJqlfui6SDB5Jl4oBSq.png" alt="Red Dead Redemption 2">
+            <h3>Red Dead Redemption 2</h3>
+            <p>R$ 149,90</p>
+            <button onclick="confirmPurchase('Red Dead Redemption 2', 14990)">Comprar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://image.api.playstation.com/vulcan/ap/rnd/202009/3021/BtsjAgHT9pqHRXtN9FCk7xc8.png" alt="Marvel’s Spider-Man Remastered">
+            <h3>Marvel’s Spider-Man Remastered</h3>
+            <p>R$ 249,90</p>
+            <button onclick="confirmPurchase('Marvel’s Spider-Man Remastered', 24990)">Comprar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA6PiKF16qu0gGOu3mszZgXwpLtnOFwiFsxw&s" alt="Street Fighter 6">
+            <h3>Street Fighter 6</h3>
+            <p>R$ 299,99*</p>
+            <button onclick="confirmPurchase('Street Fighter 6', 29999)">Comprar</button>
+        </div>
+    </div>
+
+    <h2>Nossos Produtos Colecionáveis</h2>
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="https://a-static.mlcdn.com.br/1500x1500/sonic-the-hedgehog-action-figure-2-5-inch-dr-eggman-brinquedo-colecionavel/nocnoceua/aub07kxcz3zx/df8d1f4ee569b9e7a4f9b676070d3521.jpeg" alt="Dr. Eggman">
+            <h3>Dr. Eggman</h3>
+            <p>R$ 109,90</p>
+            <button onclick="confirmPurchase('Dr. Eggman', 10990)">Comprar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXEN61hZXt-50PYFZfYnXL2y0dBGijbOZfFQ&s" alt="Sub-Zero">
+            <h3>Sub-Zero</h3>
+            <p>R$ 98,90</p>
+            <button onclick="confirmPurchase('Sub-Zero', 9890)">Comprar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_687919-MLB53401522247_012023-O.webp" alt="Zelda">
+            <h3>Zelda</h3>
+            <p>R$ 89,90</p>
+            <button onclick="confirmPurchase('Zelda', 8990)">Comprar</button>
+        </div>
+    </div>
+</section>
+
+    <footer>
+        <p>&copy; 2025 Game World. Todos os direitos reservados. <a href="javascript:void(0);" onclick="openWhatsApp()">Contato</a></p>
+    </footer>
+
+    <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function confirmPurchase(product, price) {
+            let confirm = window.confirm(`Você deseja confirmar a compra de ${product} por R$ ${price / 100}?`);
+            if (confirm) {
+                const message = `Olá, gostaria de comprar o produto: ${product} por R$ ${price / 100}.`;
+                const whatsappLink = `https://wa.me/+558699733052?text=${encodeURIComponent(message)}`;
+
+                window.location.href = whatsappLink;
+            }
+        }
+
+        function openWhatsApp() {
+            const message = "Olá, gostaria de mais informações sobre os produtos da Game World!";
+            const whatsappLink = `https://wa.me/+558699733052?text=${encodeURIComponent(message)}`;
+
+            window.location.href = whatsappLink;
+        }
+    </script>
+</body>
+</html>
